@@ -1,0 +1,64 @@
+<app-header></app-header>
+<main id="main" class="main">
+
+    <div class="pagetitle">
+        <h1>Daily Expense</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a routerLink="/dashboard">Home</a></li>
+                <li class="breadcrumb-item">Expense</li>
+                <li class="breadcrumb-item active">Daily</li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
+
+    <div class="col-md-3" style="float: right;">
+        <div class="input-group">
+            <span class="input-group-text" id="inputGroupPrepend2"><i class="bi bi-search"></i></span>
+            <input type="text" class="form-control" id="validationDefaultUsername" placeholder="Search Expense Name"
+                aria-describedby="inputGroupPrepend2" required="">
+        </div>
+    </div>
+    <br><br>
+
+    <section class="section">
+        <div class="row">
+            <div class="col-lg-12">
+
+
+
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row g-0">
+                            <div class="col">
+
+
+                                <h6 class="card-text" style="margin-top: 40px;font-size: larger;"><b>15
+                                        July</b><br><span class="text-muted small pt-2 ps-1">2022</span></h6>
+
+                                <!-- <img src="assets/img/card.jpg" class="img-fluid rounded-start" alt="..."> -->
+                            </div>
+                            <div class="col-md-11">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col">
+                                            <h5 class="card-title">Expense Name</h5>
+                                        </div>
+                                        <div class="col">
+                                            <h5 class="card-title" style="float: right;">Rs. 40000</h5>
+                                        </div>
+                                    </div>
+                                    <p class="card-text">Category : <a href="">Food</a><br> Payment : <a href="">Cash</a></p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+</main><!-- End #main -->
