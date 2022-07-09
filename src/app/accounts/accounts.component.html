@@ -46,6 +46,7 @@
         <div class="col">
             <select class="form-select" id="ddlYears" aria-label="Default select example">
                 <option selected="">Select Year</option>
+                <option *ngFor="let year of years" value="year">{{ year }}</option>
             </select>
         </div>
 

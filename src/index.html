@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <title>Expensetracker</title>
@@ -13,7 +14,9 @@
 
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -27,18 +30,19 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
- 
-   <link href="assets/css/vanilla-calendar.min.css" rel="stylesheet">
 
-   <link href="./calendar-styles.min.css" rel="stylesheet" />
-   <!-- Template Main CSS File -->
-   <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/vanilla-calendar.min.css" rel="stylesheet">
+
+  <link href="./calendar-styles.min.css" rel="stylesheet" />
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
 
 </head>
+
 <body>
   <app-root></app-root>
 
-  
+
   <!-- Vendor JS Files -->
   <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -51,60 +55,44 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-<!-- Calendar -->
-<script type="text/javascript"
-src="https://momentjs.com/downloads/moment.min.js"></script>
-<script type="text/javascript"
-src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>
+  <!-- Calendar -->
+  <script type="text/javascript" src="https://momentjs.com/downloads/moment.min.js"></script>
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>
 
-		<script src="assets/js/vanilla-calendar.min.js" defer></script>
+  <script src="assets/js/vanilla-calendar.min.js" defer></script>
 
-
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
   <script type="text/javascript">
-    window.onload = function () {
+    $(function () {
       //Reference the DropDownList.
-      var ddlYears = document.getElementById("ddlYears");
+      var ddlYears = $("#ddlYears");
 
       //Determine the Current Year.
       var currentYear = (new Date()).getFullYear();
 
       //Loop and add the Year values to DropDownList.
       for (var i = 1950; i <= currentYear; i++) {
-        var option = document.createElement("OPTION");
-        option.innerHTML = i;
-        option.value = i;
-        ddlYears.appendChild(option);
+        var option = $("<option />");
+        option.html(i);
+        option.val(i);
+        ddlYears.append(option);
       }
-    };
-
-    $(function () {
-      var dtToday = new Date();
-
-      var month = dtToday.getMonth() + 1;
-      var day = dtToday.getDate();
-      var year = dtToday.getFullYear();
-
-      if (month < 10)
-        month = '0' + month.toString();
-      if (day < 10)
-        day = '0' + day.toString();
-
-      var maxDate = year + '-' + month + '-' + day;
-      $('#txtDate').attr('max', maxDate);
     });
-</script>
+  </script>
 
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const calendar = new VanillaCalendar('#calendar');
-    calendar.init();
-  });
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const calendar = new VanillaCalendar('#calendar');
+      calendar.init();
+    });
 
-  function myFunction() {
-  const element = document.getElementById("content");
-  element.scrollIntoView();
-}
-</script>
+    function myFunction() {
+      const element = document.getElementById("content");
+      element.scrollIntoView();
+    }
+  </script>
 
 </body>
+
 </html>

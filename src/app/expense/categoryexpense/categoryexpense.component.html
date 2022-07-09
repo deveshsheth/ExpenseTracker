@@ -33,6 +33,7 @@
         <div class="col">
             <select class="form-select" id="ddlYears" aria-label="Default select example">
                 <option selected="">Select Year</option>
+                <option *ngFor="let year of years" value="year">{{ year }}</option>
             </select>
         </div>
         <div class="col">
@@ -76,7 +77,7 @@
                                             <h5 class="card-title" style="float: right;">Rs. 40000</h5>
                                         </div>
                                     </div>
-                                    <p class="card-text">Cash : <a href="#">75%</a> | Credit : <a href="#">40%</a> | Debit : <a href="#">50%</a></p>
+                                    <!-- <p class="card-text">Cash : <a href="#">75%</a> | Credit : <a href="#">40%</a> | Debit : <a href="#">50%</a></p> -->
                                 </div>
                             </div>
                         </div>
@@ -98,7 +99,7 @@
                                             <h5 class="card-title" style="float: right;">Rs. 45000</h5>
                                         </div>
                                     </div>
-                                    <p class="card-text">Cash : <a href="#">75%</a> | Credit : <a href="#">40%</a> | Debit : <a href="#">50%</a></p>
+                                    <!-- <p class="card-text">Cash : <a href="#">75%</a> | Credit : <a href="#">40%</a> | Debit : <a href="#">50%</a></p> -->
                                 </div>
                             </div>
                         </div>
