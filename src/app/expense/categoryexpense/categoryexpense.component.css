@@ -32,4 +32,18 @@
   .card-img-overlay {
     background-color: rgba(255, 255, 255, 0.6);
   }
+
+  #myDIV {
+    height: 480px;
+    width: auto;
+    overflow: auto;
+  
+  }
+  
+  #content {
+    margin:500px;
+    height: 1200px;
+    width: 2000px;
+   
+  }
   

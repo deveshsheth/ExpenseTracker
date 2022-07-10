@@ -1,12 +1,13 @@
 <app-header></app-header>
-<main id="main" class="main">
+<div class="container" style="padding-top: 10px;">
 
     <div class="pagetitle">
-        <h1>Dashboard</h1>
+        <h1>Accounts</h1>
         <nav>
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                <li class="breadcrumb-item active">Dashboard</li>
+                <li class="breadcrumb-item"><a routerLink="/dashboard">Home</a></li>
+                <li class="breadcrumb-item active">Accounts</li>
+
             </ol>
         </nav>
     </div><!-- End Page Title -->
@@ -14,11 +15,10 @@
     <section class="section dashboard">
         <div class="row">
 
-            <!-- Left side columns -->
             <div class="col-lg-12">
                 <div class="row">
 
-                    <!-- Sales Card -->
+
                     <div class="col-xxl-3 col-md-3">
                         <div class="card info-card sales-card">
 
@@ -45,20 +45,16 @@
                                     </div>
                                     <div class="ps-3">
                                         <h6>145</h6>
-                                        <!-- <span class="text-success small pt-1 fw-bold">12%</span> <span class="text-muted small pt-2 ps-1">increase</span> -->
-
                                     </div>
                                 </div>
                             </div>
 
                         </div>
-                    </div><!-- End Sales Card -->
+                    </div>
 
 
                     <div class="col-xxl-3 col-md-3">
                         <div class="card info-card sales-card">
-
-
                             <div class="card-body">
                                 <h5 class="card-title">Total Expense </h5>
 
@@ -69,40 +65,33 @@
                                     </div>
                                     <div class="ps-3">
                                         <h6>145</h6>
-                                        <!-- <span class="text-success small pt-1 fw-bold">12%</span> <span class="text-muted small pt-2 ps-1">increase</span> -->
-
                                     </div>
                                 </div>
                             </div>
 
                         </div>
-                    </div><!-- End Sales Card -->
+                    </div>
 
                     <div class="col-xxl-3 col-md-3">
                         <div class="card info-card revenue-card">
-
-
-
                             <div class="card-body">
                                 <h5 class="card-title">Most Spent On </h5>
 
                                 <div class="d-flex align-items-center">
                                     <div
                                         class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                                        <i class="bi bi-file-text"></i>
+                                        <i class="bi bi-cash"></i>
                                     </div>
                                     <div class="ps-3">
                                         <h6>Category</h6>
-                                        <!-- // <span class="text-success small pt-1 fw-bold">8%</span> <span class="text-muted small pt-2 ps-1">increase</span> -->
-
                                     </div>
                                 </div>
                             </div>
 
                         </div>
-                    </div><!-- End Revenue Card -->
+                    </div>
 
-                    <!-- Revenue Card -->
+
                     <div class="col-xxl-3 col-md-3">
                         <div class="card info-card revenue-card">
 
@@ -114,23 +103,22 @@
                                 <div class="d-flex align-items-center">
                                     <div
                                         class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                                        <i class="bi bi-currency-dollar"></i>
+                                        <i class="fa fa-inr"></i>
                                     </div>
                                     <div class="ps-3">
-                                        <h6>$3,264</h6>
-                                        <!-- // <span class="text-success small pt-1 fw-bold">8%</span> <span class="text-muted small pt-2 ps-1">increase</span> -->
+                                        <h6>3,264</h6>
 
                                     </div>
                                 </div>
                             </div>
 
                         </div>
-                    </div><!-- End Revenue Card -->
+                    </div>
 
 
 
-                    <!-- Recent Sales -->
-                    <div class="col-8">
+
+                    <div class="col-lg-8">
                         <div class="card recent-sales overflow-auto">
 
                             <div class="filter">
@@ -146,7 +134,7 @@
                                 </ul>
                             </div>
 
-                            <div class="card-body">
+                            <div class="card-body" style="height: 290px;">
                                 <h5 class="card-title">Expense Summary <span>| Daily</span></h5>
 
                                 <table class="table table-borderless datatable">
@@ -162,13 +150,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <!-- <tr>
-                        <th scope="row"><a href="#">#2457</a></th>
-                        <td>Brandon Jacob</td>
-                        <td><a href="#" class="text-primary">At praesentium minu</a></td>
-                        <td>$64</td>
-                        <td><span class="badge bg-success">Approved</span></td>
-                      </tr> -->
+                                    
                                         <tr>
                                             <th scope="row"><a href="#">#1</a></th>
                                             <td>abc</td>
@@ -196,6 +178,15 @@
                                             <td><span class="badge bg-success">Debit</span></td>
 
                                         </tr>
+                                        <tr>
+                                            <th scope="row"><a href="#">#4</a></th>
+                                            <td>abc</td>
+                                            <td><a href="#" class="text-primary">25000</a></td>
+                                            <td>25-07-2021</td>
+                                            <td>Entertaiment</td>
+                                            <td><span class="badge bg-success">Credit</span></td>
+
+                                        </tr>
 
                                     </tbody>
                                 </table>
@@ -203,30 +194,21 @@
                             </div>
 
                         </div>
-                    </div><!-- End Recent Sales -->
+                    </div>
 
                     <div class="col-lg-4">
-
-                        <!-- Recent Activity -->
                         <div class="card">
-
                             <div class="card-body">
                                 <h5 class="card-title">Calendar </h5>
-
                                 <div class="activity">
                                     <div id="calendar"></div>
-
-
                                 </div>
 
                             </div>
-                        </div><!-- End Recent Activity -->
-
+                        </div>
                     </div>
 
-
                     <div class="col-lg-6">
-                        <!-- Budget Report -->
                         <div class="card">
                             <div class="filter">
                                 <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
@@ -234,11 +216,9 @@
                                     <li class="dropdown-header text-start">
                                         <h6>Filter</h6>
                                     </li>
-
                                     <li><a class="dropdown-item" href="#">Daily</a></li>
                                     <li><a class="dropdown-item" href="#">Month</a></li>
                                     <li><a class="dropdown-item" href="#">Year</a></li>
-                                    
                                 </ul>
                             </div>
 
@@ -247,34 +227,31 @@
 
                                 <ul class="list-group list-group-flush">
                                     <li class="list-group-item"><i class="bi bi-cash"> Cash</i>
-                                        <p style="float: right;color: #012970;">Rs. 40000 <b>(68%)</b></p>
+                                        <p style="float: right;color: #012970;"><b><i class="fa fa-inr"></i> 40000</b></p>
                                     </li>
                                     <li class="list-group-item"><i class="bi bi-credit-card-2-front"> Debit </i>
-                                        <p style="float: right;color: #012970;">Rs. 40000 <b>(68%)</b></p>
+                                        <p style="float: right;color: #012970;"><b><i class="fa fa-inr"></i> 38000</b></p>
                                     </li>
                                     <li class="list-group-item"><i class="bi bi-credit-card"> Credit</i>
-                                        <p style="float: right;color: #012970;">Rs. 40000 <b>(68%)</b></p>
+                                        <p style="float: right;color: #012970;"><b><i class="fa fa-inr"></i> 1000</b></p>
                                     </li>
                                     <li class="list-group-item"><i class="bi bi-cash"> OnlinePayment</i>
-                                        <p style="float: right;color: #012970;">Rs. 40000 <b>(68%)</b></p>
+                                        <p style="float: right;color: #012970;"><b><i class="fa fa-inr"></i> 80000</b></p>
                                     </li>
                                     <li class="list-group-item"><i class="bi bi-house-door"> Asset</i>
-                                        <p style="float: right;color: #012970;">Rs. 40000 <b>(68%)</b></p>
+                                        <p style="float: right;color: #012970;"><b><i class="fa fa-inr"></i> 100000 </b></p>
                                     </li>
                                     <li class="list-group-item"><i class="bi bi-bank"> BankAcc.</i>
-                                        <p style="float: right;color: #012970;">Rs. 40000 <b>(68%)</b></p>
+                                        <p style="float: right;color: #012970;"><b><i class="fa fa-inr"></i> 20000 </b></p>
                                     </li>
 
-                                </ul><!-- End Clean list group -->
-
-
+                                </ul>
                             </div>
-                        </div><!-- End Budget Report -->
+                        </div>
                     </div>
 
 
                     <div class="col-lg-6">
-                        <!-- Budget Report -->
                         <div class="card">
                             <div class="filter">
                                 <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
@@ -282,68 +259,50 @@
                                     <li class="dropdown-header text-start">
                                         <h6>Filter</h6>
                                     </li>
-
-                                    <li><a class="dropdown-item" href="#">Cash</a></li>
-                                    <li><a class="dropdown-item" href="#">Credit</a></li>
-                                    <li><a class="dropdown-item" href="#">Debit</a></li>
-                                    <li><a class="dropdown-item" href="#">OnlinePayment</a></li>
-                                    <li><a class="dropdown-item" href="#">Asset</a></li>
-                                    <li><a class="dropdown-item" href="#">BankAcc</a></li>
+                                    <li><a class="dropdown-item" href="#">Daily</a></li>
+                                    <li><a class="dropdown-item" href="#">Month</a></li>
+                                    <li><a class="dropdown-item" href="#">Year</a></li>
                                 </ul>
                             </div>
 
                             <div class="card-body pb-0">
                                 <h5 class="card-title">Category </h5>
-
-                          
-                                   
                                 <ul class="list-group list-group-flush" id="myDIV">
                                     <li class="list-group-item">Food
-                                        <p style="float: right;color: #012970;">Rs. 40000</p>
+                                        <p style="float: right;color: #012970;"><b><i class="fa fa-inr"></i> 38000</b></p>
                                     </li>
                                     <li class="list-group-item">Food
-                                        <p style="float: right;color: #012970;">Rs. 40000</p>
+                                        <p style="float: right;color: #012970;"><b><i class="fa fa-inr"></i> 38000</b></p>
                                     </li>
                                     <li class="list-group-item">Food
-                                        <p style="float: right;color: #012970;">Rs. 40000</p>
+                                        <p style="float: right;color: #012970;"><b><i class="fa fa-inr"></i> 38000</b></p>
                                     </li>
                                     <li class="list-group-item">Food
-                                        <p style="float: right;color: #012970;">Rs. 40000</p>
+                                        <p style="float: right;color: #012970;"><b><i class="fa fa-inr"></i> 38000</b></p>
                                     </li>
                                     <li class="list-group-item">Food
-                                        <p style="float: right;color: #012970;">Rs. 40000</p>
+                                        <p style="float: right;color: #012970;"><b><i class="fa fa-inr"></i> 38000</b></p>
                                     </li>
                                     <li class="list-group-item">Food
-                                        <p style="float: right;color: #012970;">Rs. 40000</p>
+                                        <p style="float: right;color: #012970;"><b><i class="fa fa-inr"></i> 38000</b></p>
                                     </li>
                                     <li class="list-group-item">Food
-                                        <p style="float: right;color: #012970;">Rs. 40000</p>
+                                        <p style="float: right;color: #012970;"><b><i class="fa fa-inr"></i> 38000</b></p>
                                     </li>
                                     <li class="list-group-item">Food
-                                        <p style="float: right;color: #012970;">Rs. 40000</p>
+                                        <p style="float: right;color: #012970;"><b><i class="fa fa-inr"></i> 38000</b></p>
                                     </li>
                                     <li class="list-group-item">Food
-                                        <p style="float: right;color: #012970;">Rs. 40000</p>
+                                        <p style="float: right;color: #012970;"><b><i class="fa fa-inr"></i> 38000</b></p>
                                     </li>
-                                    <li class="list-group-item">Food
-                                        <p style="float: right;color: #012970;">Rs. 40000</p>
-                                    </li>
-                                    
                                   
-                                    
 
-                                </ul><!-- End Clean list group -->
-
-                        
-
-
+                                </ul>
                             </div>
-                        </div><!-- End Budget Report -->
+                        </div>
                     </div>
 
-                </div><!-- End Left side columns -->
-
-                <!-- Right side columns -->
+                </div>
 
             </div>
 
@@ -351,4 +310,4 @@
         </div>
     </section>
 
-</main><!-- End #main -->
+</div>

@@ -30,19 +30,18 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
-
   <link href="assets/css/vanilla-calendar.min.css" rel="stylesheet">
 
   <link href="./calendar-styles.min.css" rel="stylesheet" />
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 </head>
 
 <body>
   <app-root></app-root>
-
-
   <!-- Vendor JS Files -->
   <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -61,6 +60,10 @@
     src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>
 
   <script src="assets/js/vanilla-calendar.min.js" defer></script>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.22/pdfmake.min.js"></script>
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
 
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
   <script type="text/javascript">
@@ -81,17 +84,48 @@
     });
   </script>
 
+  <script type="text/javascript">
+    $("body").on("click", "#btnExport", function () {
+      html2canvas($('#tblCustomers')[0], {
+        onrendered: function (canvas) {
+          var data = canvas.toDataURL();
+          var docDefinition = {
+            content: [{
+              image: data,
+              width: 500
+            }]
+          };
+          pdfMake.createPdf(docDefinition).download("Expense-Data.pdf");
+        }
+      });
+    });
+  </script>
+
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const calendar = new VanillaCalendar('#calendar');
       calendar.init();
     });
 
-    function myFunction() {
-      const element = document.getElementById("content");
-      element.scrollIntoView();
-    }
+    // function myFunction() {
+    //   const element = document.getElementById("content");
+    //   element.scrollIntoView();
+    // }
+
+
   </script>
+
+<script>
+  var $rows = $('#expense h5');
+  $('#searchexpense').keyup(function() {
+    var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
+
+    $rows.show().filter(function() {
+      var text = $(this).text().replace(/\s+/g, ' ').toLowerCase();
+      return !~text.indexOf(val);
+    }).hide();
+  });
+</script>
 
 </body>
 

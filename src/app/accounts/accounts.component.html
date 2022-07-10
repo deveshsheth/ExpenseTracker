@@ -1,5 +1,5 @@
 <app-header></app-header>
-<main id="main" class="main">
+<div class="container" style="padding-top: 70px;">
 
     <div class="pagetitle">
         <h1>Accounts</h1>
@@ -13,7 +13,7 @@
     </div><!-- End Page Title -->
 
     <div class="row">
-        <div class="col">
+        <div class="col-lg-3">
             <select class="form-select" aria-label="Default select example">
                 <option selected="">Select Account</option>
                 <option value="credit">Credit</option>
@@ -25,7 +25,7 @@
             </select>
         </div>
 
-        <div class="col">
+        <div class="col-lg-3">
             <select class="form-select" aria-label="Default select example">
                 <option selected="">Select Month</option>
                 <option value="Jan">January</option>
@@ -43,14 +43,14 @@
             </select>
         </div>
 
-        <div class="col">
+        <div class="col-lg-3">
             <select class="form-select" id="ddlYears" aria-label="Default select example">
                 <option selected="">Select Year</option>
                 <option *ngFor="let year of years" value="year">{{ year }}</option>
             </select>
         </div>
 
-        <div class="col" style="float: right;">
+        <div class="col-lg-3" style="float: right;">
             <div class="input-group">
                 <span class="input-group-text" id="inputGroupPrepend2"><i class="bi bi-search"></i></span>
                 <input type="text" class="form-control" id="validationDefaultUsername" placeholder="Search Expense Name"
@@ -68,42 +68,18 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="row g-0">
-                            <div class="col">
-
-
-                                <h6 class="card-text" style="margin-top: 20px;font-size: larger;"><b>15
-                                        July</b><br><span class="text-muted small pt-2 ps-1">2022</span></h6>
-
-                                <!-- <img src="assets/img/card.jpg" class="img-fluid rounded-start" alt="..."> -->
-                            </div>
-                            <div class="col-md-11">
+                            <div class="col-lg-12">
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col">
                                             <h5 class="card-title">Expense Name</h5>
                                         </div>
                                         <div class="col">
-                                            <h5 class="card-title" style="float: right;">Rs. 40000</h5>
-                                            <!-- <div class="filter">
-                                                <a class="icon" href="#" data-bs-toggle="dropdown"><i
-                                                        class="bi bi-three-dots"></i></a>
-                                                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                                                    <li class="dropdown-header text-start">
-                                                        <h6>Filter</h6>
-                                                    </li>
-
-                                                    <li><a class="dropdown-item" href="#">Daily</a></li>
-                                                    <li><a class="dropdown-item" href="#">Monthly</a></li>
-                                                    <li><a class="dropdown-item" href="#">Yearly</a></li>
-                                                </ul>
-                                            </div> -->
-
+                                            <h5 class="card-title" style="float: right;"><i class="fa fa-inr"></i> 40000</h5>
                                         </div>
                                     </div>
-                                    <p class="card-text">Category : <a href="">Food</a></p>
+                                    <p class="card-text">Category : <a href="">Food</a> | Payment : <a href="">Cash</a> | Date : <a href="">15 July 2022</a></p>
                                 </div>
-
-
                             </div>
                         </div>
 
@@ -116,4 +92,4 @@
         </div>
     </section>
 
-</main><!-- End #main -->
+</div><!-- End #main -->

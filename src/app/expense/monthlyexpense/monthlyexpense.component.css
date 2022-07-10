@@ -14,7 +14,7 @@
   }
   
   .card-title {
-    padding: 15px 0 15px 0;
+    padding: 12px 0 5px 0;
     font-size: 18px;
     font-weight: 500;
     color: #012970;
@@ -32,4 +32,10 @@
   .card-img-overlay {
     background-color: rgba(255, 255, 255, 0.6);
   }
+
+  #myDIV {
+    height: 480px;
+    width: auto;
+    overflow: auto;
   
+  }

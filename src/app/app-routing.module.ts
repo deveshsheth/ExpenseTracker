@@ -5,6 +5,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { AddexpenseComponent } from './expense/addexpense/addexpense.component';
 import { CategoryexpenseComponent } from './expense/categoryexpense/categoryexpense.component';
 import { DailyexpenseComponent } from './expense/dailyexpense/dailyexpense.component';
+import { ExpensesComponent } from './expense/expenses/expenses.component';
 import { MonthlyexpenseComponent } from './expense/monthlyexpense/monthlyexpense.component';
 import { YearlyexpenseComponent } from './expense/yearlyexpense/yearlyexpense.component';
 import { HeaderComponent } from './header/header.component';
@@ -25,6 +26,7 @@ const routes: Routes = [
   // {path:'weeklyexpense',component:WeeklyexpenseComponent},
   {path:'categoryexpense',component:CategoryexpenseComponent},
   {path:'accounts',component:AccountsComponent},
+  {path:'expenses',component:ExpensesComponent}
 ];
 
 @NgModule({

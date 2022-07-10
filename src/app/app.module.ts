@@ -14,6 +14,8 @@ import { YearlyexpenseComponent } from './expense/yearlyexpense/yearlyexpense.co
 import { CategoryexpenseComponent } from './expense/categoryexpense/categoryexpense.component';
 import { HeaderComponent } from './header/header.component';
 import { ProfileComponent } from './profile/profile.component';
+import { ExpensesComponent } from './expense/expenses/expenses.component';
+import { DataTablesModule } from "angular-datatables";
 
 @NgModule({
   declarations: [
@@ -28,10 +30,12 @@ import { ProfileComponent } from './profile/profile.component';
     YearlyexpenseComponent,
     CategoryexpenseComponent,
     HeaderComponent,
-    ProfileComponent
+    ProfileComponent,
+    ExpensesComponent
   ],
   imports: [
     BrowserModule,
+    DataTablesModule,
     AppRoutingModule
   ],
   providers: [],
