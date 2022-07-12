@@ -21,13 +21,13 @@
                   <p class="text-center small">Enter your email & password to login</p>
                 </div>
 
-                <form class="row g-3 needs-validation" novalidate>
+                <form [formGroup]="myLoginForm" (ngSubmit)="submit()" class="row g-3 needs-validation" novalidate>
 
                   <div class="col-12">
-                    <label for="yourUsername" class="form-label">Email</label>
+                    <label for="youremail" class="form-label">Email</label>
                     <div class="input-group has-validation">
                       <span class="input-group-text" id="inputGroupPrepend"><i class="bi bi-envelope-fill"></i></span>
-                      <input type="text" name="username" placeholder="Enter your email" class="form-control" id="yourUsername" required>
+                      <input type="email" formControlName="email" placeholder="Enter your email" class="form-control" id="youremail" required>
                       <div class="invalid-feedback">Please enter your email.</div>
                     </div>
                   </div>
@@ -36,7 +36,7 @@
                     <label for="yourPassword" class="form-label">Password</label>
                     <div class="input-group has-validation">
                       <span class="input-group-text" id="inputGroupPrepend"><i class="bi bi-lock-fill"></i></span>
-                      <input type="password" name="username" placeholder="Enter your password" class="form-control" id="yourUsername" required>
+                      <input type="password" formControlName="password" placeholder="Enter your password" class="form-control" id="yourPassword" required>
                       <div class="invalid-feedback">Please enter your password.</div>
                     </div>
                   </div>

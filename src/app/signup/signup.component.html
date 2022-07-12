@@ -21,19 +21,19 @@
                   <p class="text-center small">Enter your personal details to create account</p>
                 </div>
 
-                <form class="row g-3 needs-validation" novalidate>
+                <form [formGroup]="mySignupForm" (ngSubmit)="submit()" class="row g-3 needs-validation" novalidate>
                   <div class="col-12">
-                    <label for="yourUsername" class="form-label">Your Name</label>
+                    <label for="yourname" class="form-label">Your Name</label>
                     <div class="input-group has-validation">
                       <span class="input-group-text" id="inputGroupPrepend"><i class="bi bi-person-fill"></i></span>
-                      <input type="text" name="username" placeholder="Enter your name" class="form-control" id="yourUsername" required>
+                      <input type="text" formControlName="name" placeholder="Enter your name" class="form-control" id="yourname" required>
                       <div class="invalid-feedback">Please enter your name.</div>
                     </div>
                   </div>
 
                   <div class="col-12">
-                    <label for="yourName" class="form-label">Your Gender</label>
-                    <select class="form-select" aria-label="Default select example">
+                    <label for="yourGender" class="form-label">Your Gender</label>
+                    <select class="form-select" aria-label="Default select example" formControlName="gender">
                       <option selected="">Select Gender</option>
                       <option value="male">Male</option>
                       <option value="female">Female</option>
@@ -41,10 +41,10 @@
                   </div>
 
                   <div class="col-12">
-                    <label for="yourUsername" class="form-label">Your Email</label>
+                    <label for="youremail" class="form-label">Your Email</label>
                     <div class="input-group has-validation">
                       <span class="input-group-text" id="inputGroupPrepend"><i class="bi bi-envelope-fill"></i></span>
-                      <input type="text" name="username" placeholder="Enter your email" class="form-control" id="yourUsername" required>
+                      <input type="email" formControlName="email" placeholder="Enter your email" class="form-control" id="youremail" required>
                       <div class="invalid-feedback">Please enter your email.</div>
                     </div>
                   </div>
@@ -53,20 +53,21 @@
                     <label for="yourPassword" class="form-label">Your Password</label>
                     <div class="input-group has-validation">
                       <span class="input-group-text" id="inputGroupPrepend"><i class="bi bi-lock-fill"></i></span>
-                      <input type="password" name="username" placeholder="Enter your password" class="form-control" id="yourUsername" required>
+                      <input type="password" formControlName="password" placeholder="Enter your password" class="form-control" id="yourPassword" required>
                       <div class="invalid-feedback">Please enter your password.</div>
                     </div>
                   </div>
 
-                  <div class="col-12">
+                  <!-- <div class="col-12">
                     <div class="form-check">
                       <input class="form-check-input" name="terms" type="checkbox" value="" id="acceptTerms" required>
                       <label class="form-check-label" for="acceptTerms">I agree and accept the <a href="#">terms and conditions</a></label>
                       <div class="invalid-feedback">You must agree before submitting.</div>
                     </div>
-                  </div>
+                  </div> -->
                   <div class="col-12">
-                    <a routerLink="/"><button class="btn btn-primary w-100" type="submit">Create Account</button></a>
+                    <!-- <a routerLink="/"><button class="btn btn-primary w-100" type="submit">Create Account</button></a> -->
+                    <button class="btn btn-primary w-100" type="submit">Create Account</button>
                   </div>
                   <div class="col-12">
                     <p class="small mb-0">Already have an account? <a routerLink="/">Log in</a></p>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-addexpense',
@@ -6,13 +7,36 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./addexpense.component.css']
 })
 export class AddexpenseComponent implements OnInit {
+myExpenseForm!:FormGroup
+myCategoryForm!:FormGroup
 
   constructor() { }
 
   ngOnInit(): void {
   
+    this.myExpenseForm = new FormGroup({
+      expensename:new FormControl('',Validators.required),
+      amount:new FormControl('',Validators.required),
+      expensedate:new FormControl('',Validators.required),
+      expensecategory: new FormControl('',Validators.required),
+      paymenttype:new FormControl('',Validators.required),
+      comment: new FormControl('',Validators.required)
+    })
+
+    this.myCategoryForm = new FormGroup({
+      categoryname:new FormControl('',Validators.required),
+    })
+
     this.futureDateDisabled();
 
+  }
+
+  expenseSubmit(){
+    console.log(this.myExpenseForm.value);
+  }
+
+  categorySubmit(){
+    console.log(this.myCategoryForm.value);
   }
 
   maxDate:any;
