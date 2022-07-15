@@ -21,12 +21,12 @@
 
             
               <i class="bi bi-person-circle" style="font-size: 40px;"></i>
-              <h2>Devesh Sheth</h2><br>
+              <h2>{{userservice.users.name}}</h2><br>
              
               <div class="row">
               <div class="col-6">
                 <h6>User Since</h6>
-              <span class="text-muted small pt-2 ps-1">25-07-2021</span>
+              <span class="text-muted small pt-2 ps-1">{{userservice.users.createdDate}}</span>
 
               </div>
               <div class="col-6">
@@ -69,17 +69,17 @@
 
                   <div class="row">
                     <div class="col-lg-3 col-md-4 label ">Full Name</div>
-                    <div class="col-lg-9 col-md-8">Devesh Sheth</div>
+                    <div class="col-lg-9 col-md-8">{{userservice.users.name}}</div>
                   </div>
 
                   <div class="row">
                     <div class="col-lg-3 col-md-4 label">Email</div>
-                    <div class="col-lg-9 col-md-8">dev12@gmail.com</div>
+                    <div class="col-lg-9 col-md-8">{{userservice.users.email}}</div>
                   </div>
 
                   <div class="row">
                     <div class="col-lg-3 col-md-4 label">Gender</div>
-                    <div class="col-lg-9 col-md-8">Male</div>
+                    <div class="col-lg-9 col-md-8">{{userservice.users.gender}}</div>
                   </div>
 
                 </div>

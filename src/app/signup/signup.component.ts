@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { SignupService } from '../service/signup.service';
 
 @Component({
@@ -10,7 +11,7 @@ import { SignupService } from '../service/signup.service';
 })
 export class SignupComponent implements OnInit {
   mySignupForm!: FormGroup;
-  constructor(private service:SignupService,private rut:Router) { }
+  constructor(private service:SignupService,private rut:Router,private toastr: ToastrService) { }
 
   ngOnInit(): void {
 
@@ -29,9 +30,10 @@ export class SignupComponent implements OnInit {
       this.service.saveusers(this.mySignupForm.value).subscribe(res=>{
         console.log(res);
         if(res.status==200){
-          
+          this.toastr.success(res.data.name, res.message);
+          this.rut.navigateByUrl('')
         }else{
-          
+          this.toastr.error(res.message,'Error');
         }
         
       })

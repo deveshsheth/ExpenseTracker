@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+import { LoginService } from '../service/login.service';
 
 @Component({
   selector: 'app-login',
@@ -8,7 +11,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
   myLoginForm!:FormGroup
-  constructor() { }
+  constructor(private service:LoginService,private rut:Router,private toastr: ToastrService) { }
 
   ngOnInit(): void {
 
@@ -20,7 +23,18 @@ export class LoginComponent implements OnInit {
   }
 
   submit(){
-    console.log(this.myLoginForm.value);
+    if(this.myLoginForm.valid){
+      this.service.loginusers(this.myLoginForm.value).subscribe(res=>{
+        this.service.users=res.data
+        
+        if(res.status==200){
+          this.toastr.success(res.message,'Welcome '+res.data.name+'..!!');
+          this.rut.navigateByUrl('/dashboard')
+        }else{
+          this.toastr.error(res.message,'Error');
+        }
+      })
+    }
     
   }
 
