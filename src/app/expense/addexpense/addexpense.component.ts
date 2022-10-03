@@ -20,7 +20,7 @@ export class AddexpenseComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.userid = { "userid": this.loginservice.users.userid }
+    this.userid = this.loginservice.users.userid 
     this.myExpenseForm = new FormGroup({
 
       expensename: new FormControl('', Validators.required),
@@ -29,7 +29,7 @@ export class AddexpenseComponent implements OnInit {
       expensecategory: new FormControl('', Validators.required),
       paymenttype: new FormControl('', Validators.required),
       comment: new FormControl('', Validators.required),
-      users: new FormControl(this.userid, Validators.required)
+      userid: new FormControl(this.userid, Validators.required)
     })
 
     this.service.listcategory().then(res => {
@@ -52,8 +52,6 @@ export class AddexpenseComponent implements OnInit {
         if(res.status==200){
           this.toastr.success(res.message,'Success');
           this.rut.navigateByUrl('/expenses')
-        }else{
-          this.toastr.warning(res.message,'Warning');
         }
 
 
@@ -70,6 +68,8 @@ export class AddexpenseComponent implements OnInit {
           this.toastr.warning(res.message, 'Warning');
         }
       })
+    }else{
+      this.toastr.error('Please Enter Details','Error');
     }
     // console.log(this.myCategoryForm.value);
   }

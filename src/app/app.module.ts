@@ -20,6 +20,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { EditexpenseComponent } from './expense/editexpense/editexpense.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { ToastrModule } from 'ngx-toastr';
     CategoryexpenseComponent,
     HeaderComponent,
     ProfileComponent,
-    ExpensesComponent
+    ExpensesComponent,
+    EditexpenseComponent
   ],
   imports: [
     BrowserModule,

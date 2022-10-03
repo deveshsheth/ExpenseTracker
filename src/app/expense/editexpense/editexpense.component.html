@@ -7,7 +7,7 @@
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a routerLink="/dashboard">Home</a></li>
                 <li class="breadcrumb-item">Expense</li>
-                <li class="breadcrumb-item active">Add Expense</li>
+                <li class="breadcrumb-item active">Edit Expense</li>
 
             </ol>
         </nav>
@@ -19,34 +19,34 @@
 
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Add Expense</h5>
+                        <h5 class="card-title">Edit Expense</h5>
 
-                        <!-- Add Expense Form  -->
-                        <form [formGroup]="myExpenseForm" (ngSubmit)="expenseSubmit()">
-                            
+                        <!-- Edit Expense Form  -->
+                        <form [formGroup]="myUpdateForm" (ngSubmit)="expSubmit()">
+                      
                             <div class="row mb-3">
                                 <label for="inputText" class="col-sm-2 col-form-label">Expense Name</label>
                                 <div class="col-sm-10">
-                                    <input type="text" formControlName="expensename" placeholder="Enter Expense Name" class="form-control" required>
+                                    <input type="text" formControlName="expensename" placeholder="Enter Expense Name" class="form-control">
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <label for="inputEmail" class="col-sm-2 col-form-label">Amount</label>
                                 <div class="col-sm-10">
-                                    <input type="text" formControlName="amount" placeholder="Enter Amount" class="form-control" required>
+                                    <input type="text" formControlName="amount" placeholder="Enter Amount" class="form-control">
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <label for="inputPassword" class="col-sm-2 col-form-label">Expense Date</label>
                                 <div class="col-sm-10">
-                                    <input type="date" max={{maxDate}} formControlName="expensedate" class="form-control" required>
+                                    <input type="date" max={{maxDate}} class="form-control" formControlName="expensedate">
                                 </div>
                             </div>
 
                             <div class="row mb-3">
                                 <label class="col-sm-2 col-form-label">Category</label>
                                 <div class="col-sm-10">
-                                    <select class="form-select" aria-label="Default select example" formControlName="expensecategory" required>
+                                    <select class="form-select"  aria-label="Default select example" formControlName="expensecategory">
                                         <option value="" disabled>Select Category</option>
                                         <option *ngFor="let c of listcategory">{{c.categoryname}}</option>
                                        
@@ -57,7 +57,7 @@
                             <div class="row mb-3">
                                 <label class="col-sm-2 col-form-label">Payment Type</label>
                                 <div class="col-sm-10">
-                                    <select class="form-select" aria-label="Default select example" formControlName="paymenttype" required>
+                                    <select class="form-select" aria-label="Default select example" formControlName="paymenttype">
                                         <option value="" disabled>Select Payment Mode</option>
                                         <option value="Credit">Credit</option>
                                         <option value="Debit">Debit</option>
@@ -72,12 +72,11 @@
                             <div class="row mb-3">
                                 <label for="inputPassword" class="col-sm-2 col-form-label">Comments (Optional)</label>
                                 <div class="col-sm-10">
-                                    <textarea class="form-control" placeholder="Write your comments here.." style="height: 100px" formControlName="comment"></textarea>
+                                    <textarea class="form-control" formControlName="comment" placeholder="Write your comments here.." style="height: 100px" ></textarea>
                                 </div>
                             </div>
-
                             
-                            <input type="hidden" formControlName="users">
+                    
                             <div class="row mb-3">
                                 <label class="col-sm-2 col-form-label"></label>
                                 <div class="col-sm-10">
@@ -85,40 +84,12 @@
                                 </div>
                             </div>
 
-                        </form><!-- End Add Expense Form -->
-
-
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Add Category</h5>
-
-                         <!-- Add Category Form  -->
-                         <form [formGroup]="myCategoryForm" (ngSubmit)="categorySubmit()">
-                            <div class="row mb-3">
-                                <label for="inputText" class="col-sm-2 col-form-label">Category Name</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control" placeholder="Please Enter Valid Category Name" formControlName="categoryname" required>
-                                </div>
-                            </div>
-                            
-                           
-                            <div class="row mb-3">
-                                <label class="col-sm-2 col-form-label"></label>
-                                <div class="col-sm-10">
-                                    <button type="submit" class="btn btn-primary">Save</button>
-                                </div>
-                            </div>
-
-                        </form><!-- End Add Category Form -->
+                        </form><!-- End Edit Expense Form -->
 
                     </div>
                 </div>
 
             </div>
-
 
         </div>
     </section>

@@ -33,13 +33,19 @@ export class SignupComponent implements OnInit {
           this.toastr.success(res.data.name, res.message);
           this.rut.navigateByUrl('')
         }else{
-          this.toastr.error(res.message,'Error');
+          this.toastr.warning(res.message,'Warning');
         }
         
       })
 
+    }else{
+      this.toastr.error('Please Enter Details','Error');
     }
   
   }
 
 }
+function elseif(arg0: boolean) {
+  throw new Error('Function not implemented.');
+}
+

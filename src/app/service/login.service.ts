@@ -12,7 +12,7 @@ users:UserLogin={userid:0,name:"",email:"",password:"",gender:"",createdDate:"",
   constructor(private http : HttpClient) { }
 
   loginusers(model: any): Observable<any> {
-    return this.http.post(`${environment.Base_Url}loginusers`, model);
+    return this.http.post(`${environment.Base_Url}login`, model);
   }
 
 

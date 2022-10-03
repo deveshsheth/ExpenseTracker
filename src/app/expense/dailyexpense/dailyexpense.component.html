@@ -25,20 +25,20 @@
         <div class="row">
             <div class="col-lg-12">
 
-                <div class="card">
+                <div class="card" *ngFor="let exp of expense">
                     <div class="card-body">
                         <div class="row g-0">
                             <div class="col-lg-12">
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col">
-                                            <h5 class="card-title">Expense Name</h5>
+                                            <h5 class="card-title">{{ exp.expensename }}</h5>
                                         </div>
                                         <div class="col">
-                                            <h5 class="card-title" style="float: right;"><i class="fa fa-inr"></i> 40000</h5>
+                                            <h5 class="card-title" style="float: right;"><i class="fa fa-inr"></i> {{ exp.amount }}</h5>
                                         </div>
                                     </div>
-                                    <p class="card-text">Category : <a href="">Food</a> | Payment : <a href="">Cash</a> | Date : <a href="">15 July 2022</a></p>
+                                    <p class="card-text">Category : <a href="">{{ exp.expensecategory }}</a> | Payment : <a href="">{{exp.paymenttype}}</a> | Date : <a href="">{{ exp.expensedate | date:"mediumDate" }}</a></p>
                                 </div>
                             </div>
                         </div>

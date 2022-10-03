@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+import { ExpenseService } from '../service/expense.service';
+import { LoginService } from '../service/login.service';
 
 @Component({
   selector: 'app-accounts',
@@ -6,16 +10,26 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./accounts.component.css']
 })
 export class AccountsComponent implements OnInit {
-  selectedYear: number;
-  years: number[] = [];
-  constructor() {
-    this.selectedYear = new Date().getFullYear();
-    for (let year = this.selectedYear; year >= 1950; year--) {
-      this.years.push(year);
-    }
-   }
+
+  expense: any = {};
+  userid: any = {}
+  paymenttype:any={}
+  constructor(private expservice :ExpenseService,private loginservice: LoginService, private toastr: ToastrService, private rut: Router) {}
 
   ngOnInit(): void {
   }
+
+  onSelected(value:any): void {
+  
+		this.paymenttype = value;
+
+     this.expservice.listExpensePaymentType(this.paymenttype,this.loginservice.users.userid).then(res => {
+        this.expense = res.data
+       // console.log(this.expense);
+      })  
+
+    console.log("month..  "+this.paymenttype+"userid..  "+this.loginservice.users.userid);
+    
+	}
 
 }

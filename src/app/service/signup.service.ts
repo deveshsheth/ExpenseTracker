@@ -11,7 +11,7 @@ export class SignupService {
   constructor(private http : HttpClient) { }
 
   saveusers(model: any): Observable<any> {
-    return this.http.post(`${environment.Base_Url}saveusers`, model);
+    return this.http.post(`${environment.Base_Url}signup`, model);
   }
 
 

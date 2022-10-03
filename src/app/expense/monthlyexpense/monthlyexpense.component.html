@@ -14,20 +14,20 @@
 
     <div class="row">
         <div class="col-lg-3">
-            <select class="form-select" aria-label="Default select example">
+            <select #teams  class="form-select" aria-label="Default select example" (change)="onSelected(teams.value)">
                 <option selected="">Select Month</option>
-                <option value="Jan">January</option>
-                <option value="Feb">Febuary</option>
-                <option value="March">March</option>
-                <option value="April">April</option>
-                <option value="May">May</option>
-                <option value="June">June</option>
-                <option value="July">July</option>
-                <option value="Aug">August</option>
-                <option value="Sep">September</option>
-                <option value="Oct">October</option>
-                <option value="Nov">November</option>
-                <option value="Dec">December</option>
+                <option value="01">January</option>
+                <option value="02">Febuary</option>
+                <option value="03">March</option>
+                <option value="04">April</option>
+                <option value="05">May</option>
+                <option value="06">June</option>
+                <option value="07">July</option>
+                <option value="08">August</option>
+                <option value="09">September</option>
+                <option value="10">October</option>
+                <option value="11">November</option>
+                <option value="12">December</option>
             </select>
         </div>
         <div class="col">
@@ -48,20 +48,20 @@
         <div class="row"  id="myDIV">
             <div class="col-lg-12">
 
-                <div class="card">
+                <div class="card" *ngFor="let exp of expense">
                     <div class="card-body">
                         <div class="row g-0">
                             <div class="col-lg-12">
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col">
-                                            <h5 class="card-title">Expense Name</h5>
+                                            <h5 class="card-title">{{ exp.expensename }}</h5>
                                         </div>
                                         <div class="col">
-                                            <h5 class="card-title" style="float: right;"><i class="fa fa-inr"></i> 40000</h5>
+                                            <h5 class="card-title" style="float: right;"><i class="fa fa-inr"></i> {{ exp.amount }}</h5>
                                         </div>
                                     </div>
-                                    <p class="card-text">Category : <a href="">Food</a> | Payment : <a href="">Cash</a> | Date : <a href="">15 July 2022</a></p>
+                                    <p class="card-text">Category : <a href="">{{ exp.expensecategory }}</a> | Payment : <a href="">{{exp.paymenttype}}</a> | Date : <a href="">{{ exp.expensedate | date:"mediumDate" }}</a></p>
                                 </div>
                             </div>
                         </div>

@@ -11,11 +11,11 @@ export class CategoryService {
   constructor(private http : HttpClient) { }
 
   savecategory(model: any): Observable<any> {
-    return this.http.post(`${environment.Base_Url}savecategory`, model);
+    return this.http.post(`${environment.Base_Url}addCategory`, model);
   }
 
   listcategory():Promise <any> {
-    return this.http.get(`${environment.Base_Url}listcategory`).toPromise();
+    return this.http.get(`${environment.Base_Url}listCategory`).toPromise();
   }
 
 }
